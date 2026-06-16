@@ -20,7 +20,6 @@
 # ------------------------------------------------------------
 
 # Função 1 - Verifica se um número é divisível por outro
-# 🐛 BUG: operador errado
 def divisivel_por(numero, divisor):
     """Retorna True se 'numero' for divisível por 'divisor'."""
     if divisor == 0:
@@ -32,7 +31,7 @@ def divisivel_por(numero, divisor):
 def potencia(base, expoente):
     """Calcula base elevado a expoente usando multiplicação."""
     resultado = 1
-    for _ in range(expoente - 1):  # BUG: deveria ser range(expoente)
+    for _ in range(expoente):  # BUG: deveria ser range(expoente)
         resultado *= base
     return resultado
 
