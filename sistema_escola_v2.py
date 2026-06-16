@@ -120,7 +120,7 @@ def remover_duplicatas(lista):
 def intercalar_listas(lista1, lista2):
     """Intercala os elementos de duas listas: [a,b], [x,y] → [a,x,b,y]."""
     resultado = []
-    tamanho = min(len(lista1), len(lista2))
+    tamanho = min(len(lista1), max(lista2))
     for i in range(tamanho):
         resultado.append(lista1[i])
         resultado.append(lista2[i])
