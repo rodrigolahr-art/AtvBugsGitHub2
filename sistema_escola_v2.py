@@ -224,7 +224,6 @@ def estatisticas_notas(notas):
     }
 
 # Função 22 - Classifica aluno com base em média e frequência
-# 🐛 BUG: condição de frequência usa OR em vez de AND
 def classificar_aluno(media, frequencia):
     """
     Retorna a situação do aluno:
@@ -232,7 +231,7 @@ def classificar_aluno(media, frequencia):
     - 'Reprovado por falta': frequência < 75
     - 'Reprovado por nota': média < 6
     """
-    if media >= 6 or frequencia >= 75:  # BUG: deveria ser AND
+    if media >= 6 and frequencia >= 75:  # BUG: deveria ser AND
         return "Aprovado"
     elif frequencia < 75:
         return "Reprovado por falta"
