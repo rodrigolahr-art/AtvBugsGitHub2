@@ -195,7 +195,6 @@ def filtrar_chaves(dicionario, chaves_permitidas):
     # BUG: deveria ser "if k in chaves_permitidas"
 
 # Função 20 - Agrupa alunos por turma em um dicionário
-# 🐛 BUG: sobrescreve a lista em vez de adicionar ao grupo
 def agrupar_por_turma(alunos):
     """
     Recebe lista de dicts com 'nome' e 'turma'.
@@ -206,7 +205,7 @@ def agrupar_por_turma(alunos):
         turma = aluno["turma"]
         if turma not in grupos:
             grupos[turma] = []
-        grupos[turma] = [aluno["nome"]]  # BUG: deveria ser grupos[turma].append(...)
+        grupos[turma].append = [aluno["nome"]]  # BUG: deveria ser grupos[turma].append(...)
     return grupos
 
 
