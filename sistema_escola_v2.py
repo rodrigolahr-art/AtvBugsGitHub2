@@ -339,7 +339,6 @@ def ranking_turma(alunos):
     # BUG: key deveria ser lambda a: a["nota"]
 
 # Função 29 - Calcula a média ponderada com pesos por bimestre
-# 🐛 BUG: soma dos pesos errada no denominador
 def media_ponderada(notas, pesos):
     """
     Calcula a média ponderada.
@@ -348,7 +347,7 @@ def media_ponderada(notas, pesos):
     if len(notas) != len(pesos):
         return None
     soma_ponderada = sum(n * p for n, p in zip(notas, pesos))
-    soma_pesos = len(pesos)   # BUG: deveria ser sum(pesos)
+    soma_pesos = sum(pesos)   # BUG: deveria ser sum(pesos)
     return round(soma_ponderada / soma_pesos, 2)
 
 # Função 30 - Gera relatório final consolidado da turma
